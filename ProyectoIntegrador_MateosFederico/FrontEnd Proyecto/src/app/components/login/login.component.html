@@ -9,29 +9,28 @@
   
                 <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
                 <p class="text-white-50 mb-5">Ingrese Usuario y Contraseña</p>
-  
-                <div class="form-outline form-white mb-4">
-                  <input type="email" id="typeEmailX" class="form-control form-control-lg" />
-                  <label class="form-label" for="typeEmailX">Usuario</label>
-                </div>
-  
-                <div class="form-outline form-white mb-4">
-                  <input type="password" id="typePasswordX" class="form-control form-control-lg" />
-                  <label class="form-label" for="typePasswordX">Contraseña</label>
-                </div>
-  
-                 
-                <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
-  
-                <div class="d-flex justify-content-center text-center mt-4 pt-1">
-                  <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
-                  <a href="#!" class="text-white"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
-                  <a href="#!" class="text-white"><i class="fab fa-google fa-lg"></i></a>
-                </div>
-  
+                
+                <form #f='ngForm' (ngSubmit)="onLogin()" novalidate>
+                  <div class="form-outline form-white mb-4">
+                    <input type="email" id="nombreUsuario" name="nombreUsuario" class="form-control form-control-lg" [(ngModel)]="nombreUsuario" required/>
+                    <label class="form-label" for="nombreUsuario">Usuario</label>
+                  </div>
+    
+                  <div class="form-outline form-white mb-4">
+                    <input type="password" id="password" name="password" class="form-control form-control-lg" [(ngModel)]="password" required/>
+                    <label class="form-label" for="password">Contraseña</label>
+                  </div>
+    
+                   
+                  <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
+ 
+                </form>
+                
+                
               </div>
   
               <div>
+                <p class="mb-0">¿Desea crear una nueva cuenta? <a class="text-white-50 fw-bold">Crear cuenta</a></p>
                 <p class="mb-0">Argentina Programa 2022</p>
               </div>
   
